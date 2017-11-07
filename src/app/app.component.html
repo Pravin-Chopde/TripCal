@@ -1,0 +1,40 @@
+<h1>Expence App</h1>
+
+<button (click)="showJson()">Show JSON</button>
+
+<div *ngIf="displayJson">
+  <pre>{{crud | json}}</pre>
+</div>
+
+<button (click)="logDisplay()">Add Expence</button>
+<button (click)="logDisplay()">Add contribution</button>
+
+<div *ngIf="logShow">
+  <form>
+    <div>
+        Total Expence: {{crud.fund.expence}} <br>
+        Total contribution left: {{crud.fund.contri}}
+    </div>
+    Date:
+    <input type="text" name="Date" [(ngModel)]="crud.log[0].dateAndTime">{{crud.log[0].dateAndTime}}
+    <div>
+        Expence: <br>
+        Amount:
+        <input type="text" name="Examounr" id="" [(ngModel)]="log.expence.ammount">
+        Decprition:
+        <input type="text" name="Dec" id="" [(ngModel)]="log.expence.itemOrThing">
+        Paid by:
+        <input type="text" name="PaidBy" id="" [(ngModel)]="log.expence.paidBy">
+        paid for:
+        <input type="text" name="PaidFor" id="" [(ngModel)]="log.expence.paidFor">        
+    </div>
+    <div>
+        Contribution: <br>
+        Amount:
+        <input type="text" name="Contri" id="" [(ngModel)]="log.contri.amount">
+        paid for:
+        <input type="text" name="User" id="" [(ngModel)]="log.contri.userName">        
+    </div>
+    <button (click)="addLog()">Submit</button>
+  </form>
+</div>
