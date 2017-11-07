@@ -18,7 +18,7 @@ export class AppComponent {
     this._dataService.getCrud()
       .subscribe(res => {
         this.crud = res;
-        this.crud = this.crud[0];
+        // this.crud = this.crud[0];
         console.log('new crud', this.crud);
       });
   }
